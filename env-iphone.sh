@@ -32,6 +32,6 @@ DEV_TARGET="iPhoneOS"
 alias c-sim="echo fuck you"
 alias c-iphone="./configure --prefix=${prefix} --enable-static=yes --enable-shared=no --host='arm-apple-darwin9'"
 
-export LDFLAGS="-arch armv6 -pipe -no-cpp-precomp -isysroot ${sysroot} -L{prefix}/lib"
-export CFLAGS="-arch armv6 -pipe -no-cpp-precomp -isysroot ${sysroot} -I{prefix}/include"
+export LDFLAGS="-arch armv6 -pipe -no-cpp-precomp -isysroot ${sysroot} -L${prefix}/lib"
+export CFLAGS="-arch armv6 -pipe -no-cpp-precomp -isysroot ${sysroot} -I${prefix}/include"
 export CXXFLAGS="${CFLAGS}"

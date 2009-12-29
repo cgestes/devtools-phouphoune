@@ -34,6 +34,6 @@ DEV_TARGET="iPhoneSimulator"
 alias c-sim="./configure --prefix=${prefix} --enable-static=yes --enable-shared=no"
 alias c-iphone="echo fuck you"
 
-export LDFLAGS="-arch i686 -pipe -no-cpp-precomp -isysroot ${sysroot} -mmacosx-version-min=${OSX_MIN_VERSION} -L{prefix}/lib"
-export CFLAGS="-arch i686 -pipe -no-cpp-precomp -isysroot ${sysroot} -Mdynamic-no-pic -mmacosx-version-min=${OSX_MIN_VERSION} -I{prefix}/include"
+export LDFLAGS="-arch i686 -pipe -no-cpp-precomp -isysroot ${sysroot} -mmacosx-version-min=${OSX_MIN_VERSION} -L${prefix}/lib"
+export CFLAGS="-arch i686 -pipe -no-cpp-precomp -isysroot ${sysroot} -Mdynamic-no-pic -mmacosx-version-min=${OSX_MIN_VERSION} -I${prefix}/include"
 export CXXFLAGS="$CFLAGS"
