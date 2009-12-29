@@ -26,9 +26,9 @@
 
 dir=$(dirname $0)
 
-. ${dir}/config.sh
+. ${dir}/config.shh
 DEV_TARGET="iPhoneSimulator"
-. ${dir}/base.sh
+. ${dir}/base.shh
 
 # For iPhone simulator
 alias c-sim="./configure --prefix=${prefix} --enable-static=yes --enable-shared=no"
