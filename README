@@ -1,0 +1,32 @@
+Work with 3.0 not later ATM
+
+Standard unix build:
+--------------------
+use env-sim.sh
+
+. env-sim.sh
+c-sim
+make
+make install
+
+using this procedure build:
+- freetype2
+- curl
+- jpeg
+- png
+
+
+
+SDL
+---
+use SDL 1.3 (svn 5437)
+open Xcode-iphoneos/SDL/*.xcodeproj
+choose iphone-simulated-3.0 in project setting (base SDK)
+build, copy to /home/dist/sim/lib and /home/dist/sim/include/SDL
+
+
+xmoto
+-----
+open xmoto and dependencies
+build!
+
