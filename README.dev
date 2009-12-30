@@ -1,17 +1,20 @@
 Code signing:
 Create a certifate using http://developer.apple.com/documentation/Security/Conceptual/CodeSigningGuide/Procedures/Procedures.html. Stop when it start talking about plists files. Call the certificate "iPhone Developer".
 
-edit:
+edit: (not required in think)
 Next, you need to edit /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.0.sdk/SDKSettings.plist and change CODE_SIGNING_REQUIRED from YES to NO.
 
-------
-#!/bin/bash
-cd /Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS\ Build\ System\ Support.xcplugin/Contents/MacOS/
+/Developer/Platforms/iPhoneOS.platform/Info.plist
+find line 46 and replace "XCiPhoneOSCodeSignContext" with "XCCodeSignContext" (see image). Repeat the operation for line 79 and save the file.
 
-dd if=iPhoneOS\ Build\ System\ Support of=working bs=500 count=255
-printf "\x8f\x2a\x00\x00" >> working
-dd if=iPhoneOS\ Build\ System\ Support of=working bs=1 skip=127504 seek=127504
-/bin/mv -n iPhoneOS\ Build\ System\ Support iPhoneOS\ Build\ System\ Support.original
-/bin/mv working iPhoneOS\ Build\ System\ Support
-chmod a+x iPhoneOS\ Build\ System\ Support
-------
+
+install the installd patch in cydia...
+
+
+
+--
+Remote debug
+
+install ldid2 and modify /Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/iPhoneCodeSign.xcspec find line 12 and replace "/usr/bin/codesign" with "/usr/local/bin/ldid2" (see image).
+
+add -gta in OtherCodeSigningFlags
